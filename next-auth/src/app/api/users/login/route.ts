@@ -6,6 +6,8 @@ import jwt from "jsonwebtoken";
 
 connect();
 
+// The NextRequest and NextResponse objects are extension of the native Request and Response interface, with the added methods and properties.
+
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
@@ -36,7 +38,7 @@ export async function POST(request: NextRequest) {
       email: user.email,
     };
     // create token
-    const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
+    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
       expiresIn: "1d",
     });
 
@@ -52,3 +54,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
+// The NextResponse API allows you to:
+
+// redirect the incoming request to a different URL
+// rewrite the response by displaying a given URL
+// Set request headers for API Routes, getServerSideProps, and rewrite destinations
+// Set response cookies
+// Set response headers
+

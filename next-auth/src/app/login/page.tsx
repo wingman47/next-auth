@@ -43,7 +43,7 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-4">
       <h1 className="text-3xl font-bold mb-4 text-center">
-        {loading ? "Processing" : "Sign Up"}
+        {loading ? "Processing" : "Login"}
       </h1>
       <hr className="w-1/3 mb-4 border-t border-gray-500" />
       <div className="flex flex-col gap-3 items-center">
