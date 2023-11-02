@@ -1,5 +1,6 @@
 // declaring it as frontend component so that we can utilise client side functionalities like hooks etc.
 // ! all the logs in this file would be available on the client side console because we have declared use client on this page
+
 // ! we can also declare "use server" to specific blocks in this page as well to declare them as server components
 "use client";
 

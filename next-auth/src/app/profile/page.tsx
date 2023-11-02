@@ -43,7 +43,7 @@ export default function ProfilePage() {
         onClick={getUserDetails}
         className="bg-green-500 py-2 px-4 rounded"
       >
-        GET DETAILS
+        Get Details
       </button>
     </div>
   );

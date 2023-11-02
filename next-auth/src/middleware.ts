@@ -8,7 +8,9 @@ export function middleware(request: NextRequest) {
 
   // get current path
   const path = request.nextUrl.pathname;
-  const isPublicPath = path === "/login" || path === "/signup";
+  
+  const isPublicPath =
+    path === "/login" || path === "/signup" || path === "/verifyemail";
   const token = request.cookies.get("token")?.value || "";
   if (isPublicPath && token) {
     // redirect to '/' if the user has token and trying to access login or signup
@@ -26,7 +28,7 @@ export function middleware(request: NextRequest) {
 // matcher allows you to filter Middleware to run on specific paths.
 // ! must have '/'
 export const config = {
-  matcher: ["/", "/profile", "/login", "/signup"],
+  matcher: ["/", "/profile", "/login", "/signup", "/verifyemail"],
 };
 
 // ? Conditional Statements:
