@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import jwt from "jsonwebtoken";
 
+// used to extract user data for profile page (through "me" route)
 export const getDataFromToken = (request: NextRequest) => {
   try {
     const encodedToken = request.cookies.get("token")?.value || "";

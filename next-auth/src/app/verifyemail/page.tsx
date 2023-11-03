@@ -18,7 +18,8 @@ export default function VerifyEmailPage() {
       console.log(error.response.data);
     }
   };
-
+  // user signup -> mailer.ts is called inside signup -> middleware mailer.ts sends verification link -> when user clicks on email verification link it goes to this page. token is extracted from the link using useEffect and that token is sent
+  // to /api/users/verifyemail for email verification
   useEffect(() => {
     const urlToken = window.location.search.split("=")[1];
     setToken(urlToken || "")
