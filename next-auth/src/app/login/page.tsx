@@ -16,14 +16,14 @@ export default function LoginPage() {
     password: "",
     username: "",
   });
-  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (user.email.length > 0 && user.password.length > 0)
       setButtonDisabled(false);
     else setButtonDisabled(true);
-  }, [userAgent]);
+  }, [user]);
 
   const onLogin = async () => {
     try {
